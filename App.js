@@ -1,16 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { Alert, StyleSheet, Text, View, ActivityIndicator, Button } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, Button } from 'react-native';
 import { WebView } from 'react-native-webview';
 import NetInfo from "@react-native-community/netinfo";
-import RetryScreen from './screens/RetryScreen';
-
-
 
 
 function App() {
   const [isConnected, setIsConnected] = useState(true);
-
 
   useEffect(() => {
     NetInfo.fetch().then(state => {
@@ -22,8 +17,6 @@ function App() {
       }
     })
   })
-
-
 
   const Spinner = () => (
     <View style={styles.activityContainer}>
